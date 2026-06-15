@@ -39,7 +39,7 @@
         .bg-item-2 { top: 5%; right: -30px; transform: rotate(10deg); font-size: 10rem; }
         .bg-item-3 { bottom: 20%; right: 15%; opacity: 0.06; font-size: 8rem; }
 
-        /* کانتینەری سەرەکی - شووشەیی کە بە پڕی شاشە پڕ دەبێتەوە */
+        /* کانتینەری سەرەکی - شووشەیی */
         .glass-card {
             width: 100%;
             max-width: 550px;
@@ -57,7 +57,7 @@
         /* هێدەر */
         .hero {
             text-align: center;
-            margin-bottom: 1.8rem;
+            margin-bottom: 1.5rem;
         }
         .avatar-burger {
             width: 85px;
@@ -106,7 +106,91 @@
         }
         .delivery-badge i { font-size: 0.8rem; }
 
-        /* لینک کارتەکان */
+        /* ========== دوو دوگمەی نوێ بۆ شوێنەکان ========== */
+        .branches-row {
+            display: flex;
+            gap: 1rem;
+            margin: 1.5rem 0 1rem;
+            flex-wrap: wrap;
+            justify-content: center;
+        }
+        .branch-card {
+            flex: 1;
+            min-width: 160px;
+            background: rgba(0, 0, 0, 0.55);
+            backdrop-filter: blur(8px);
+            border-radius: 1.5rem;
+            text-decoration: none;
+            transition: all 0.25s ease;
+            border: 1px solid rgba(255, 170, 70, 0.6);
+            overflow: hidden;
+            box-shadow: 0 10px 20px -5px rgba(0,0,0,0.4);
+        }
+        .branch-card:hover {
+            transform: translateY(-5px);
+            border-color: #ffbb55;
+            box-shadow: 0 18px 28px -8px black;
+        }
+        .branch-inner {
+            display: flex;
+            flex-direction: column;
+            align-items: center;
+            padding: 1rem 0.8rem;
+            text-align: center;
+            gap: 8px;
+        }
+        .branch-icon {
+            font-size: 2.2rem;
+            background: rgba(255, 200, 100, 0.15);
+            width: 55px;
+            height: 55px;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            border-radius: 60px;
+            transition: 0.2s;
+        }
+        .branch-card:hover .branch-icon {
+            background: rgba(255, 160, 30, 0.4);
+            transform: scale(1.02);
+        }
+        .branch-title {
+            font-weight: 700;
+            font-size: 1rem;
+            color: #ffdfaa;
+            letter-spacing: 0.3px;
+        }
+        .branch-address {
+            font-size: 0.7rem;
+            color: #dbb87a;
+            display: flex;
+            align-items: center;
+            gap: 5px;
+        }
+        .branch-arrow {
+            color: #ffaa44;
+            font-size: 0.8rem;
+            transition: transform 0.2s;
+        }
+        .branch-card:hover .branch-arrow {
+            transform: translateX(4px);
+        }
+        /* جیاوازی ڕەنگ بۆ هەر دوگمەیەک */
+        .branch-university {
+            border-top: 3px solid #4caf50;
+        }
+        .branch-university .branch-icon {
+            color: #8bc34a;
+        }
+        .branch-park {
+            border-top: 3px solid #ff9800;
+        }
+        .branch-park .branch-icon {
+            color: #ffb74d;
+        }
+        /* ================================= */
+
+        /* لینک کارتەکانی خوارەوە (سۆشیال میدیا) */
         .link-item { margin-bottom: 0.9rem; }
         .link-btn {
             display: flex;
@@ -141,7 +225,7 @@
         }
         .link-btn .arrow-icon { color: #ffaa44; font-size: 1.3rem; transition: transform 0.2s ease; }
         
-        /* hover effect */
+        /* hover effects for socials */
         .link-tiktok:hover { border-color: #00f2ea; box-shadow: 0 0 12px rgba(0, 242, 234, 0.4); background: #11100c; }
         .link-instagram:hover { border-color: #fccc7a; box-shadow: 0 0 12px #f56040; background: linear-gradient(120deg, #2a1e2c, #1f1822);}
         .link-facebook:hover { border-color: #3b82f6; box-shadow: 0 0 12px #1877f2; background: #10131c; }
@@ -153,7 +237,7 @@
         /* پرۆمۆ کۆد */
         .promo-card {
             background: linear-gradient(115deg, #2d2418, #1f1910);
-            margin: 1.2rem 0 0.8rem;
+            margin: 1rem 0 0.8rem;
             border-radius: 1.8rem;
             padding: 0.7rem 1rem;
             display: flex;
@@ -170,7 +254,7 @@
         .small-cta { font-size: 0.65rem; color: #ccaa77; text-align: center; margin-top: 5px; }
         .footer-note { text-align: center; margin-top: 1.5rem; font-size: 0.65rem; color: #b2894b; display: flex; justify-content: center; gap: 1rem; flex-wrap: wrap; }
 
-        /* Responsive بۆ شاشە زۆر بچووکەکان */
+        /* Responsive */
         @media (max-width: 450px) {
             body { padding: 0.8rem; }
             .glass-card { padding: 1.2rem 1rem 1.5rem; border-radius: 2rem; }
@@ -178,16 +262,14 @@
             .platform-icon-img { width: 28px; height: 28px; border-radius: 8px; }
             .platform-name { font-size: 0.95rem; }
             .link-btn { padding: 0.5rem 1rem; }
-            .promo-text { font-size: 0.75rem; }
-            .code { font-size: 0.85rem; padding: 4px 12px; }
+            .branches-row { gap: 0.7rem; }
+            .branch-inner { padding: 0.8rem 0.5rem; }
+            .branch-icon { width: 45px; height: 45px; font-size: 1.8rem; }
+            .branch-title { font-size: 0.85rem; }
         }
 
-        /* بۆ شاشە بەرزەکان (هیچ زیادەیی نامێنێت) */
         @media (min-height: 800px) {
-            .glass-card {
-                margin: 1rem auto;
-            }
-            .link-item { margin-bottom: 1rem; }
+            .glass-card { margin: 1rem auto; }
         }
 
         /* animation */
@@ -196,11 +278,13 @@
             to { opacity: 1; transform: translateY(0);}
         }
         .glass-card { animation: fadeSlide 0.5s ease-out; }
+        .hero { opacity: 0; animation: fadeSlide 0.3s forwards; }
+        .branches-row { opacity: 0; animation: fadeSlide 0.4s forwards; animation-delay: 0.1s; }
         .link-item { opacity: 0; animation: fadeSlide 0.3s forwards; }
-        .link-item:nth-child(1) { animation-delay: 0.05s; }
-        .link-item:nth-child(2) { animation-delay: 0.1s; }
-        .link-item:nth-child(3) { animation-delay: 0.15s; }
-        .link-item:nth-child(4) { animation-delay: 0.2s; }
+        .link-item:nth-child(1) { animation-delay: 0.2s; }
+        .link-item:nth-child(2) { animation-delay: 0.25s; }
+        .link-item:nth-child(3) { animation-delay: 0.3s; }
+        .link-item:nth-child(4) { animation-delay: 0.35s; }
     </style>
 </head>
 <body>
@@ -218,6 +302,37 @@
         <div class="delivery-badge">
             <i class="fas fa-motorcycle"></i> <span>Fast Delivery • 15-20 دەقیقە</span> <i class="fas fa-bolt"></i>
         </div>
+    </div>
+
+    <!-- دوو دوگمەی جوان بۆ شوێنەکان (لقی یەکەم و لقی دووەم) -->
+    <div class="branches-row">
+        <!-- لقی یەکەم: زانکۆ -->
+        <a href="https://maps.app.goo.gl/S3P37ZqbPJdRzqGE7" target="_blank" rel="noopener" class="branch-card branch-university">
+            <div class="branch-inner">
+                <div class="branch-icon">
+                    <i class="fas fa-university"></i>
+                </div>
+                <div class="branch-title">لقی یەکەم • زانکۆ</div>
+                <div class="branch-address">
+                    <i class="fas fa-map-pin"></i> <span>پیشاندان لە گووگڵ مەیپ</span>
+                    <i class="fas fa-arrow-right branch-arrow"></i>
+                </div>
+            </div>
+        </a>
+
+        <!-- لقی دووەم: 32 پاڕک -->
+        <a href="https://maps.app.goo.gl/GmEcootTVRKEzM4f7" target="_blank" rel="noopener" class="branch-card branch-park">
+            <div class="branch-inner">
+                <div class="branch-icon">
+                    <i class="fas fa-tree"></i>
+                </div>
+                <div class="branch-title">لقی دووەم • 32 پاڕک</div>
+                <div class="branch-address">
+                    <i class="fas fa-map-pin"></i> <span>پیشاندان لە گووگڵ مەیپ</span>
+                    <i class="fas fa-arrow-right branch-arrow"></i>
+                </div>
+            </div>
+        </a>
     </div>
 
     <!-- TikTok -->
@@ -268,7 +383,7 @@
         <div class="promo-text"><i class="fas fa-ticket-alt"></i><span>کۆدی دابەزین</span></div>
         <div class="code">none</div>
     </div>
-    <div class="small-cta"><i class="fas fa-clock"></i> ئایس پۆپ هەڵبژێرە</div>
+    <div class="small-cta"><i class="fas fa-clock"></i> ئایس پۆپ هەڵژێرە</div>
 
     <div class="footer-note">
         <span><i class="fas fa-map-marker-alt"></i> هەولێر / زانکۆ و 32 پاڕک</span>
@@ -277,7 +392,7 @@
 </div>
 
 <script>
-    console.log("✅ Responsive Full Screen LinkTree — گونجاو بۆ هەموو شاشەیەک");
+    console.log("✅ دوو دوگمە بە شێوەی کارتی هاوشێوە و یەک سایز دروستکرا: لقی یەکەم (زانکۆ) و لقی دووەم (32 پاڕک)");
 </script>
 </body>
 </html>
